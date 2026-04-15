@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-
+import TypingText from "@/components/typing";
 export default function BirthdayPage() {
 
     const triggerConfetti = async () => {
@@ -22,23 +22,26 @@ export default function BirthdayPage() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-center max-w-2xl"
       >
-        <motion.h1
-          initial={{ y: -40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-5xl font-extrabold md:text-7xl drop-shadow-xl"
-        >
-          Happy Birthday Shashank 🎉
-        </motion.h1>
+       <motion.h1
+  initial={{ y: -40, opacity: 0 }}
+  animate={{
+    y: 0,
+    opacity: 1,
+    scale: [1, 1.08, 1, 1.12, 1], // double beat
+  }}
+  transition={{
+    delay: 0.3,
+    duration: 1.2,
+    ease: "easeInOut",
+    repeat: Infinity,
+    repeatDelay: 0.6, // pause between heartbeats
+  }}
+  className="text-5xl font-extrabold md:text-7xl drop-shadow-xl"
+>
+  Happy Birthday my Dear Wife 🎉
+</motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="mt-6 text-lg md:text-2xl font-light"
-        >
-          Wishing you a year full of growth, happiness, and massive success. 💫
-        </motion.p>
+        <TypingText />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
