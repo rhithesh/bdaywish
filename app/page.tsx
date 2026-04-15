@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import TypingText from "@/components/typing";
+import MusicPlayer from "@/components/music";
 export default function BirthdayPage() {
 
     const triggerConfetti = async () => {
@@ -16,9 +17,7 @@ export default function BirthdayPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-500 via-purple-600 to-indigo-700 flex items-center justify-center p-6 text-white">
-      <audio autoPlay loop>
-  <source src="/music/Inth.mp3" type="audio/mpeg" />
-</audio>
+      <MusicPlayer />
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
